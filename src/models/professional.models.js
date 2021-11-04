@@ -38,25 +38,28 @@ const Professional = new Schema({
     rubros: {
       type: Array,
       require: true,
-    }
+    },
   },
 
   info_lugar_trabajo: {
+    dias_atencion: {
+      type: String,
+    },
     horario_atencion: {
-      type: Date
+      type: Date,
     },
     direccion: {
-      type: string
+      type: string,
     },
     marcador: {
       latitud: {
-        type: string
+        type: string,
       },
       longitud: {
-        type: string
-      }
-    }
-  }
+        type: string,
+      },
+    },
+  },
 });
 
 module.exports = model("Professional", Professional);
