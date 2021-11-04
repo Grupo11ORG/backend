@@ -77,7 +77,7 @@ controller.deleteUsuarios = async (req, res) => {
     await findByIdAndDelete(id);
 
     res.json({
-      msg: "el Usuarios se elimino del sistema",
+      msg: "el usuarios se elimino del sistema",
     });
   } catch (error) {
     res.status(500).json({ msg: "Error al eliminar Usuarios" });
