@@ -15,7 +15,6 @@ controller.loginUser = async (req, res) => {
     bcryptjs.compare(password, user.password, async (err, data) => {
       if (data) {
         const { id } = user;
-
         const token = await generar_jwt(id);
 
         res.header("auth-token", token).json({

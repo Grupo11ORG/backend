@@ -22,15 +22,13 @@ controller.getProfesional = async (req, res) => {
 };
 
 controller.createProfesional = async (req, res) => {
-  const { personal_info, contact_info, academic_info, professional_info } =
-    req.body;
+  const { datos_personales, info_profesional, info_lugar_trabajo } = req.body;
 
   try {
     const profesionales = new Profesionales({
-      personal_info,
-      contact_info,
-      academic_info,
-      professional_info,
+      datos_personales,
+      info_profesional,
+      info_lugar_trabajo,
     });
     await profesionales.save();
 
@@ -47,31 +45,25 @@ controller.createProfesional = async (req, res) => {
 
 controller.updateProfesional = async (req, res) => {
   const { id } = req.params;
-  const { personal_info, contact_info, academic_info, professional_info } =
-    req.body;
+  const { datos_personales, info_profesional, info_lugar_trabajo } = req.body;
   const update = {};
 
-  if (personal_info) {
-    update.personal_info = personal_info;
+  if (datos_personales) {
+    update.datos_personales = datos_personales;
   }
 
-  if (contact_info) {
-    update.contact_info = contact_info;
+  if (info_profesional) {
+    update.info_profesional = info_profesional;
   }
 
-  if (academic_info) {
-    update.academic_info = academic_info;
-  }
-
-  if (professional_info) {
-    update.professional_info = professional_info;
+  if (info_lugar_trabajo) {
+    update.info_lugar_trabajo = info_lugar_trabajo;
   }
 
   const execute_validation =
-    update.personal_info ||
-    update.contact_info ||
-    update.academic_info ||
-    update.professional_info;
+    update.datos_personales ||
+    update.info_profesional ||
+    update.info_lugar_trabajo;
 
   if (execute_validation) {
     try {
