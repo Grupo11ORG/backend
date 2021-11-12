@@ -31,7 +31,7 @@ const Professional = new Schema({
   },
 
   info_profesional: {
-    certifications: {
+    certificaciones: {
       type: Array,
       require: false,
     },

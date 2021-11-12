@@ -3,35 +3,19 @@ const middlewares = {};
 middlewares.professionalExtractAtributes = (req, res, next) => {
   let { datos_personales } = req.body;
 
-  const { fullname, birthdate, dni, gender, country, state, address, hobbies } =
+  const { nombre_completo, fecha_nacimiento, dni, sexo, telefono, email } =
     datos_personales;
 
-  const extracted_personal_info = {
-    fullname,
-    birthdate,
-    dni,
-    gender,
-    country,
-    state,
-    address,
-    hobbies,
-  };
-
-  const extracted_contact_info = {
-    phone,
-    email,
-    social_media,
-  };
-
   const extracted_datos_personales = {
-    primary,
-    secondary,
-    tertiary,
-    universitary,
-    certifications,
+    nombre_completo,
+    fecha_nacimiento,
+    dni,
+    sexo,
+    telefono,
+    email,
   };
 
-  datos_personales = extracted_personal_info;
+  datos_personales = extracted_datos_personales;
 
   next();
 };
