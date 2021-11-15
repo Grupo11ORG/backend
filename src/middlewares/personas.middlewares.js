@@ -1,6 +1,6 @@
 const middlewares = {};
 
-middlewares.professionalExtractAtributes = (req, res, next) => {
+middlewares.personasExtractAtributes = (req, res, next) => {
   let { datos_personales } = req.body;
 
   const { nombre_completo, fecha_nacimiento, dni, sexo, telefono, email } =

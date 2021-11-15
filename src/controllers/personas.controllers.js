@@ -1,5 +1,5 @@
-const Usuarios = require("../models/usuarios.models");
-const { findByIdAndDelete } = require("../models/usuarios.models");
+const Usuarios = require("../models/personas.models");
+const { findByIdAndDelete } = require("../models/personas.models");
 const controller = {};
 
 controller.getUsuarios = async (_req, res) => {
@@ -8,7 +8,7 @@ controller.getUsuarios = async (_req, res) => {
   res.json(usuarios);
 };
 
-controller.getUsuarios = async (req, res) => {
+controller.getUsuario = async (req, res) => {
   const { id } = req.params;
 
   try {

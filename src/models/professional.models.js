@@ -46,17 +46,17 @@ const Professional = new Schema({
       type: String,
     },
     horario_atencion: {
-      type: Date,
+      type: String,
     },
     direccion: {
-      type: string,
+      type: String,
     },
     marcador: {
       latitud: {
-        type: string,
+        type: String,
       },
       longitud: {
-        type: string,
+        type: String,
       },
     },
   },
