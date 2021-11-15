@@ -1,6 +1,6 @@
 const { model, Schema } = require("mongoose");
 
-const Professional = new Schema({
+const Profesional = new Schema({
   datos_personales: {
     nombre_completo: {
       type: String,
@@ -62,4 +62,4 @@ const Professional = new Schema({
   },
 });
 
-module.exports = model("Professional", Professional);
+module.exports = model("Profesional", Profesional);
