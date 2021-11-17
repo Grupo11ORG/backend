@@ -22,7 +22,12 @@ controller.getPersona = async (req, res) => {
 };
 
 controller.createPersona = async (req, res) => {
-  const { datos_personales, info_profesional, info_lugar_trabajo } = req.body;
+  const {
+    datos_personales,
+    es_profesional,
+    info_profesional,
+    info_lugar_trabajo,
+  } = req.body;
 
   try {
     const profesionales = new Personas({

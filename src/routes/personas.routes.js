@@ -6,34 +6,26 @@ const { verificarActivo } = require("../middlewares/user.middlewares");
 
 //----------Controladores-----------------
 const {
-  getProfesionales,
-  getProfesional,
-  createProfesional,
-  updateProfesional,
-  deleteProfesional,
+  createPersona,
+  updatePersona,
+  deletePersona,
+  getPersonas,
+  getPersona,
 } = require("../controllers/personas.controllers");
 const {
-  post_middlewares_professional,
-  update_middlewares_professional,
+  post_middlewares_persona,
+  update_middlewares_persona,
 } = require("../middlewares/form_personas.middlewares");
 
 //---------------Rutas---------------------
 // publicas
-route.get("/", getProfesionales);
-route.get("/:id", getProfesional);
+route.get("/", getPersonas);
+route.get("/:id", getPersona);
 
 // privadas // [validar_jwt, verificarActivo],
-route.post(
-  "/",
-  [validar_jwt, post_middlewares_professional],
-  createProfesional
-);
-route.put(
-  "/:id",
-  [validar_jwt, update_middlewares_professional],
-  updateProfesional
-);
+route.post("/", [validar_jwt, post_middlewares_persona], createPersona);
+route.put("/:id", [validar_jwt, update_middlewares_persona], updatePersona);
 // route.put("/password/:id", [validar_jwt, verificarActivo], updateProfesional);
-route.delete("/:id", [validar_jwt, verificarActivo], deleteProfesional);
+route.delete("/:id", [validar_jwt, verificarActivo], deletePersona);
 
 module.exports = route;
