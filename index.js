@@ -18,7 +18,7 @@ app.use(helmet());
 app.set("port", process.env.PORT || 4000);
 
 // Routes
-app.use("/api/profesionales", require("./src/routes/professionals.routes"));
+app.use("/api/profesionales", require("./src/routes/personas.routes"));
 // rutas para registrar un usuario y autenticarlo
 app.use("/api", require("./src/routes/apiAuthentication.routes"));
 // app.use("/user", require("./src/routes/user.routes"));
